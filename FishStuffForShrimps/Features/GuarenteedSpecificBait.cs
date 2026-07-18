@@ -204,7 +204,6 @@ public static class GuarenteedSpecificBait
             return;
         }
 
-        location ??= Game1.getLocationFromName(locationName);
         itemQueryContext ??= new ItemQueryContext(
             location ?? Game1.getLocationFromName(locationName),
             null,

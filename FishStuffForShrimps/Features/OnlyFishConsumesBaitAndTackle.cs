@@ -41,7 +41,12 @@ public static class OnlyFishConsumesBaitAndTackle
     {
         if (!consumeBaitAndTackle)
             return;
-        if (__instance.whichFish == null || __instance.lastCatchWasJunk || __instance.fromFishPond)
+#if SDV17
+        bool skippedMinigame = __instance.lastCatchSkippedMinigame;
+#else
+        bool skippedMinigame = __instance.lastCatchWasJunk;
+#endif
+        if (__instance.whichFish == null || skippedMinigame || __instance.fromFishPond)
             consumeBaitAndTackle = false;
     }
 }
