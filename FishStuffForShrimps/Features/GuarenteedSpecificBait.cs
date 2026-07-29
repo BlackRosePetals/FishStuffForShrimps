@@ -226,7 +226,6 @@ public static class GuarenteedSpecificBait
             )
                 continue;
 
-            ModEntry.Log($"Trying '{spawn.Id}'");
             if (spawn.RandomItemId?.Any() ?? false)
             {
                 SpawnFishData tmpSpawn = spawn.ShallowClone();
