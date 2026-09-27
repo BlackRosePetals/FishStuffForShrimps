@@ -12,7 +12,7 @@ public sealed class ModConfig
     public bool Enable_GuarenteedSpecificBait { get; set; } = true;
     public bool BypassCatchLimit { get; set; } = true;
     public bool Enable_OnlyFishConsumesBaitAndTackle { get; set; } = true;
-    public bool Enable_FishingDoesNotStopTime { get; set; } = true;
+    public bool Enable_FishingDoesNotStopTime { get; set; } = false;
 
     public void Reset()
     {
@@ -22,7 +22,7 @@ public sealed class ModConfig
         Enable_GuarenteedSpecificBait = true;
         BypassCatchLimit = true;
         Enable_OnlyFishConsumesBaitAndTackle = true;
-        Enable_FishingDoesNotStopTime = true;
+        Enable_FishingDoesNotStopTime = false;
     }
 
     public void Register(IModHelper helper, IManifest mod)
