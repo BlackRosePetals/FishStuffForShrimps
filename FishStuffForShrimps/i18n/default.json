@@ -11,5 +11,8 @@
   "config.BypassCatchLimit.name": "- Bypass Catch Limit",
   "config.BypassCatchLimit.desc": "Targeted bait will ignore catch limits, allowing fishing up multiple legendary fish with the corresponding bait.",
   "config.Enable_OnlyFishConsumesBaitAndTackle.name": "Enable: Only Fish Consumes Bait and Tackle",
-  "config.Enable_OnlyFishConsumesBaitAndTackle.desc": "Bait and tackle are only used up when catching a fish."
+  "config.Enable_OnlyFishConsumesBaitAndTackle.desc": "Bait and tackle are only used up when catching a fish.",
+  "config.Enable_FishingDoesNotStopTime.name": "Enable: Time Does Not Stop While Fishing",
+  "config.Enable_FishingDoesNotStopTime.desc": "Time keeps moving during the fishing minigame in singleplayer.",
+  "compat.ItsStardewTimeWarning": "ItsStardewTime is incompatible with Fish Stuff For Shrimps' fishing time feature."
 }

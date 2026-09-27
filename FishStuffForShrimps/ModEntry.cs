@@ -16,20 +16,25 @@ public sealed partial class ModEntry : Mod
 
     public const string ModId = "mushymato.FishStuffForShrimps";
     private static IMonitor mon = null!;
+    internal static IModHelper help = null!;
     internal static ModConfig config = null!;
     internal static readonly Harmony harmony = new(ModId);
+    internal static bool HasItsStardewTime = false;
 
     public override void Entry(IModHelper helper)
     {
         I18n.Init(helper.Translation);
         mon = Monitor;
+        help = helper;
         config = helper.ReadConfig<ModConfig>();
 
         helper.Events.GameLoop.GameLaunched += OnGameLaunched;
+        HasItsStardewTime = helper.ModRegistry.IsLoaded("Cabbose.Sage.TimeMaster.ItsStardewTime");
 
         BobberBarFishIcon.Toggle();
         GuarenteedSpecificBait.Toggle();
         OnlyFishConsumesBaitAndTackle.Toggle();
+        FishingDoesNotStopTime.Toggle();
     }
 
     private void OnGameLaunched(object? sender, GameLaunchedEventArgs e)
