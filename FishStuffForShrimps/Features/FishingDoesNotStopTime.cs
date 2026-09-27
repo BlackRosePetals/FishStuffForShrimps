@@ -7,12 +7,19 @@ namespace FishStuffForShrimps.Features;
 
 public static class FishingDoesNotStopTime
 {
+    public static void Toggle()
+    {
+        if (ModEntry.config.Enable_FishingDoesNotStopTime)
+            ModEntry.help.Events.GameLoop.UpdateTicked += OnUpdateTicked;
+        else
+            ModEntry.help.Events.GameLoop.UpdateTicked -= OnUpdateTicked;
+    }
+
     [EventPriority(EventPriority.High)]
     public static void OnUpdateTicked(object? sender, UpdateTickedEventArgs e)
     {
         if (
-            !ModEntry.config.Enable_FishingDoesNotStopTime
-            || !Context.IsWorldReady
+            !Context.IsWorldReady
             || Context.IsMultiplayer
             || Game1.activeClickableMenu is not BobberBar
             || Game1.currentMinigame != null

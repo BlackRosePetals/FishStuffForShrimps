@@ -95,10 +95,20 @@ public sealed class ModConfig
             I18n.Config_EnableOnlyFishConsumesBaitAndTackle_Name,
             I18n.Config_EnableOnlyFishConsumesBaitAndTackle_Desc
         );
+        if (ModEntry.HasItsStardewTime)
+        {
+            gmcm.AddParagraph(mod, I18n.Compat_ItsStardewTimeWarning);
+        }
         gmcm.AddBoolOption(
             mod,
             () => Enable_FishingDoesNotStopTime,
-            (value) => Enable_FishingDoesNotStopTime = value,
+            (value) =>
+            {
+                bool checkBefore = Enable_FishingDoesNotStopTime;
+                Enable_FishingDoesNotStopTime = value;
+                if (checkBefore != Enable_FishingDoesNotStopTime)
+                    FishingDoesNotStopTime.Toggle();
+            },
             I18n.Config_EnableFishingDoesNotStopTime_Name,
             I18n.Config_EnableFishingDoesNotStopTime_Desc
         );
