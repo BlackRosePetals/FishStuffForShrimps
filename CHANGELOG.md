@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ## [0.6.0] - 2026-09-27
 
 ### Added
-- New config, option to have time pass while fishing
+- New config, option to have time pass while fishing (thanks to [DylanJames](https://github.com/dylanjames-xyz))
 
 ## [0.5.1] - 2026-07-29
 
