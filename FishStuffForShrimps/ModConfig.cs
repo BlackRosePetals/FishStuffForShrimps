@@ -12,6 +12,7 @@ public sealed class ModConfig
     public bool Enable_GuarenteedSpecificBait { get; set; } = true;
     public bool BypassCatchLimit { get; set; } = true;
     public bool Enable_OnlyFishConsumesBaitAndTackle { get; set; } = true;
+    public bool Enable_FishingDoesNotStopTime { get; set; } = true;
 
     public void Reset()
     {
@@ -21,6 +22,7 @@ public sealed class ModConfig
         Enable_GuarenteedSpecificBait = true;
         BypassCatchLimit = true;
         Enable_OnlyFishConsumesBaitAndTackle = true;
+        Enable_FishingDoesNotStopTime = true;
     }
 
     public void Register(IModHelper helper, IManifest mod)
@@ -92,6 +94,13 @@ public sealed class ModConfig
             },
             I18n.Config_EnableOnlyFishConsumesBaitAndTackle_Name,
             I18n.Config_EnableOnlyFishConsumesBaitAndTackle_Desc
+        );
+        gmcm.AddBoolOption(
+            mod,
+            () => Enable_FishingDoesNotStopTime,
+            (value) => Enable_FishingDoesNotStopTime = value,
+            I18n.Config_EnableFishingDoesNotStopTime_Name,
+            I18n.Config_EnableFishingDoesNotStopTime_Desc
         );
     }
 }

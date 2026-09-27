@@ -11,5 +11,8 @@
   "config.BypassCatchLimit.name": "针对性鱼饵强化：无视捕捉数限制",
   "config.BypassCatchLimit.desc": "针对性鱼饵将无视无视捕捉数限制，允许用对应的鱼饵钓出多条传说鱼类。",
   "config.Enable_OnlyFishConsumesBaitAndTackle.name": "启用：非鱼不消耗鱼饵和渔具",
-  "config.Enable_OnlyFishConsumesBaitAndTackle.desc": "鱼饵和渔具只有钓起鱼时才会消耗。"
+  "config.Enable_OnlyFishConsumesBaitAndTackle.desc": "鱼饵和渔具只有钓起鱼时才会消耗。",
+  "config.Enable_FishingDoesNotStopTime.name": "Enable: Time Does Not Stop While Fishing",
+  "config.Enable_FishingDoesNotStopTime.desc": "Time keeps moving during the fishing minigame in singleplayer.",
+  "compat.ItsStardewTimeWarning": "ItsStardewTime is incompatible with Fish Stuff For Shrimps' fishing time feature."
 }

@@ -30,11 +30,16 @@ public sealed partial class ModEntry : Mod
         BobberBarFishIcon.Toggle();
         GuarenteedSpecificBait.Toggle();
         OnlyFishConsumesBaitAndTackle.Toggle();
+
+        helper.Events.GameLoop.UpdateTicked += FishingDoesNotStopTime.OnUpdateTicked;
     }
 
     private void OnGameLaunched(object? sender, GameLaunchedEventArgs e)
     {
         config.Register(Helper, ModManifest);
+
+        if (Helper.ModRegistry.IsLoaded("Cabbose.Sage.TimeMaster.ItsStardewTime"))
+            Log(I18n.Compat_ItsStardewTimeWarning(), LogLevel.Warn);
     }
 
     /// <summary>SMAPI static monitor Log wrapper</summary>
